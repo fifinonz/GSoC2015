@@ -10,15 +10,16 @@ long factorial (long _facNumber);
 long fibonacci(long _fibNumber);
  
 /*palindrome*/
-long (long palindNumber);
+long (long _palindNumber);
 
 /*primes*/
 long prime(long _primeNumber);
 
-/*triangles*/
+
 
 /* Towers of Hanoi */
 
+/*triangles*/
 struct triangle {
 	int x;
 	int y;
@@ -68,7 +69,32 @@ long fibonacci(long _fibNumber)
 	}
 } // end fibonacci function
 
-/* 
+/* Generate palindromes*/
+long palindrome(long _palindNumber)
+{
+	long temp1, temp2;
+ 	long reverseNo;
+	long palindArr[_palindNumber];
+
+/* Find all palindromes within a given _palindNumber range*/
+	for(i=_palindNumber; i!=0; i--)
+	{	temp1=i;
+		temp2=i;
+   		while( temp2 != 0 )
+   		{
+      			reverse = reverse * 10;
+      			reverse = reverse + temp%10;
+      			temp2 = temp2/10;
+  		 }
+		if( temp1 == reverse)
+		{
+			palindArr[i]=temp1;		
+		}
+	}
+	return &palindArr;
+
+} // end palindrome function
+
 /*  Classify a Triangle */
 tri_type *  classify(triangle *tri1)
 
