@@ -1,7 +1,23 @@
 #ifndef _NmathH_
 #define _NmathH_
 
+/* Declarations */
 
+/* factorial*/
+long factorial (long _facNumber);
+
+/* fibonacci */
+long fibonacci(long _fibNumber);
+ 
+/*palindrome*/
+long (long palindNumber);
+
+/*primes*/
+long prime(long _primeNumber);
+
+/*triangles*/
+
+/* Towers of Hanoi */
 
 struct triangle {
 	int x;
@@ -16,14 +32,43 @@ struct tri_type {
 };
 typedef struct tri_type tri_type;
 
+ tri_type* classify(triangle *tri1);
+
+/* Square Root*/
 float mysqrt(float num);
 
-tri_type* classify(triangle *tri1);
+
 
 /**************************************************
-			Custom Functions
+			Function Definitions
 ***************************************************/
+/* Calculate factorial*/
+long factorial (long _facNumber)
+{	/*base case*/
+	if (_facNumber<=1)
+	{ 
+		return 1;
+	}
+	else
+	{ 	return (_facNumber * factorial(_facNumber - 1));
+}
 
+} // end factorial function
+
+/* Calculate fibonacci */
+long fibonacci(long _fibNumber)
+{	/*base case*/
+	if(_fibNumber=0 || _fibNumber==1)
+	{
+		return _fibNumber;
+	}
+	else 
+	{
+		return fibonacci(_fibNumber - 1) + fibonacci(_fibNumber - 2);
+	}
+} // end fibonacci function
+
+/* 
 /* 1. Classify a Triangle */
 tri_type *  classify(triangle *tri1)
 
@@ -41,7 +86,8 @@ tri_type *  classify(triangle *tri1)
 
 /* Evaluate Triangle sides */
 
-	 if ((a + b > c && a + c > b && b + c  > a) && ( a > 0 && b > 0 && c > 0)) {
+	 if ((a + b > c && a + c > b && b + c  > a) && ( a > 0 && b > 0 && c > 0)) 
+	{
 		
 /* Calculate area of Triangle */
 
@@ -51,27 +97,32 @@ tri_type *  classify(triangle *tri1)
 
 /* Equilateral Triangle */
 		
-			if (a== b && b == c) {
-				result.type =1;	 
+	  if (a== b && b == c)
+	 {
+		result.type =1;	 
 			
-						}
+	}
 /* Isoceles Triangle */
 
-				else if (a == b || b == c || a == c) {
-					result.type =2;	
+	    else if (a == b || b == c || a == c) 
+	{
+		 result.type =2;	
 				
-					}
+	}
 /* Scalene Triangle */
 
-				else {
-						result.type =3;	
+	else 
+	{
+		result.type =3;	
 					
 				}
-			} /* end nested if */
+	} /* end nested if */
 
 /* Input not a triangle */
 
-	else {
+	else 
+	{
+
 		result.area =0.0;			
 		result.type =4;
 	}
@@ -89,20 +140,19 @@ tri_type *  classify(triangle *tri1)
 
 float mysqrt(float num)
 {
-float i,j;
-j=0.0001;
+	float i,j;
+	j=0.0001;
 
+	for(i=0;i<num;i=i+j)
+	{	
+		if((i*i)>num)
+	{
+		i=i-j;
+		break;
+	}
+	}
 
-for(i=0;i<num;i=i+j)
-{
-if((i*i)>num)
-{
-i=i-j;
-break;
-}
-}
-
-return i;
+	return i;
 }
 
 
