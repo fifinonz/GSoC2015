@@ -69,7 +69,7 @@ long fibonacci(long _fibNumber)
 } // end fibonacci function
 
 /* 
-/* 1. Classify a Triangle */
+/*  Classify a Triangle */
 tri_type *  classify(triangle *tri1)
 
 {
@@ -136,7 +136,7 @@ tri_type *  classify(triangle *tri1)
 	return resultptr;
 }
 
-/* 2. Calculate Square root */
+/* Calculate Square root */
 
 float mysqrt(float num)
 {
